@@ -1,44 +1,25 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // import Header from "./componants/Header";
 import Home from "./containers/Home";
 import Product from "./containers/Product";
+import Header from "./componants/Header";
 
 function App() {
-  const [products, setProducts] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const fetchData = async () => {
-    try {
-      const response = await axios.get(
-        "https://lereacteur-vinted-api.herokuapp.com/offers"
-      );
-      // console.log(response.data);
-      setProducts(response.data.offers);
-      setIsLoading(true);
-    } catch (error) {
-      alert(error.message);
-    }
-  };
-  useEffect(() => {
-    fetchData();
-  }, []);
-  return isLoading ? (
+  return (
     <div>
+      <Header />
       <Router>
         <Switch>
           <Route path="/product/:id">
-            <Product products={products} />
+            <Product />
           </Route>
           <Route path="/">
-            <Home products={products} />
+            <Home />
           </Route>
         </Switch>
       </Router>
     </div>
-  ) : (
-    <span>en cours de chargements</span>
   );
 }
 
