@@ -13,7 +13,9 @@ function Header({ token, setUser, search, setSearch }) {
     <div className="header">
       <div className="container-header">
         <div className="col-1">
-          <img className="logo" src={Logo} alt="" />
+          <Link to="/">
+            <img className="logo" src={Logo} alt="" />
+          </Link>
           <div className="search">
             <Link to="/filters" className="search-icon">
               <i class="fas fa-search"></i>

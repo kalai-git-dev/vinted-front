@@ -9,18 +9,18 @@ function Section({ product }) {
           <div className="owner">
             <img
               className="img-avatar"
-              src={product.owner.account.avatar.url}
+              src={product.product_image.url}
+              // src={product.owner.account.avatar.url}
               alt={product.owner.account.username}
             />
 
             <p className="p-owner">{product.owner.account.username}</p>
           </div>
-          {/* product.product_picture[0].url */}
-          {/* {console.log(product.product_pictures[0].url)} */}
+
           <img
             className="img-product"
-            src={product.product_pictures[0].url}
-            alt={product.product_pictures[0].asset_id}
+            src={product.product_image.url}
+            alt={product.product_image.asset_id}
           />
 
           <p className="p-price">{product.product_price} £</p>
