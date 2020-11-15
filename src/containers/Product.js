@@ -19,7 +19,7 @@ const Product = () => {
       setIsLoading(false);
     };
     fetchData();
-  }, []);
+  }, [id]);
   return isLoading ? (
     <img className="loading" src={loading} alt="loading" />
   ) : (
