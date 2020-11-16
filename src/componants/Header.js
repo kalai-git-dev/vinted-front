@@ -47,7 +47,9 @@ function Header({ token, setUser, search, setSearch }) {
               </div>
             )}
           </nav>
-          <button>Vends tes articles</button>
+          <Link className="button-vente" to="/publish">
+            Vends tes articles
+          </Link>
         </div>
       </div>
     </div>

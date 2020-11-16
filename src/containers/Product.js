@@ -25,16 +25,15 @@ const Product = () => {
   ) : (
     <div className="container-product">
       <div className="col-3">
-        {data.product_pictures.map((picture, index) => {
-          return <img src={picture.url} alt={picture.version_id} />;
-        })}
+        <img src={data.product_image.secure_url} alt={data.version_id} />;
       </div>
       <div className="col-4">
         <div className="bloc-1">
           <p className="price">{data.product_price}£</p>
           {data.product_details.map((detail, index) => {
             const keys = Object.keys(detail);
-            console.log(keys);
+            // console.log(keys);
+            console.log(data);
             return (
               <p className="details" key={index}>
                 <p className="span-left">{keys[0]}</p>
@@ -48,12 +47,18 @@ const Product = () => {
           <h3>{data.product_name}</h3>
           <p>{data.product_description}</p>
           <div className="user">
-            <img
-              className="img-avatar"
-              src={data.owner.account.avatar.url}
-              alt={data.owner.account.username}
-            />
-            <span>{data.owner.account.username}</span>
+            {data.owner.account.avatar ? (
+              <>
+                <img
+                  className="img-avatar"
+                  src={data.owner.account.avatar.url}
+                  alt={data.owner.account.username}
+                />
+                <span>{data.owner.account.username}</span>
+              </>
+            ) : (
+              <span>{data.owner.account.username}</span>
+            )}
           </div>
           <button className="button-product">Acheter</button>
         </div>

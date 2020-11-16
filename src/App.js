@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import "./App.css";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from "react-router-dom";
 // import Header from "./componants/Header";
 import Cookie from "js-cookie";
 import Home from "./containers/Home";
@@ -9,6 +14,7 @@ import Header from "./componants/Header";
 import Signup from "./containers/Signup";
 import Login from "./containers/Login";
 import FiltersProducts from "./containers/FiltersProducts";
+import Publish from "./containers/publish/Publish";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -55,6 +61,10 @@ function App() {
               filtersProducts={filtersProducts}
             />
           </Route>
+          <Route exact path="/publish">
+            {!token ? <Redirect to="/login" /> : <Publish token={token} />}
+          </Route>
+
           <Route path="/">
             <Home
               search={search}

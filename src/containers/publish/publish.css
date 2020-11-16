@@ -1,0 +1,76 @@
+.container-publish {
+  width: 70%;
+  margin: 60px auto;
+}
+h1 {
+  margin-bottom: 40px;
+  font-size: 25px;
+  font-weight: 700;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.section-input {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  border: 1px solid rgb(185, 185, 185);
+  margin-bottom: 20px;
+  background-color: #fff;
+}
+.input-heigth {
+  height: 250px;
+}
+.input-file {
+  outline: none;
+  padding: 15px 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.contenu-input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px;
+}
+.contenu-input:not(:last-child) {
+  border-bottom: rgb(194, 193, 191) 1px solid;
+}
+.contenu-input label {
+  font-size: 20px;
+  font-weight: 500;
+  font-style: italic;
+  white-space: nowrap;
+  margin-right: 20px;
+}
+.contenu-input input,
+.contenu-input textarea {
+  width: 50%;
+  border: none;
+  outline: none;
+  border-bottom: rgb(235, 231, 231) 1px solid;
+
+  max-height: 150px;
+}
+input::placeholder,
+textarea::placeholder {
+  color: rgb(207, 209, 209);
+}
+input[type="submit"] {
+  background-color: #09b1baff;
+  border: none;
+  padding: 17px 30px;
+  margin-top: 20px;
+  margin-left: auto;
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  outline: none;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  font-size: 16px;
+}
+.button {
+  display: flex;
+}
