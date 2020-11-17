@@ -3,31 +3,27 @@ import { useHistory, Link } from "react-router-dom";
 import axios from "axios";
 
 const Login = ({ setUser }) => {
-  const History = useHistory();
+  const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      if (email && password) {
-        const response = await axios.post(
-          "https://lereacteur-vinted-api.herokuapp.com/user/login",
-          {
-            email: email,
-            password: password,
-          }
-        );
-        //   console.log(response.data);
-        if (response.data.token) {
-          setUser(response.data.token);
-
-          History.push("/");
-        } else {
-          alert("Une erreur user");
+      const response = await axios.post(
+        "https://lereacteur-vinted-api.herokuapp.com/user/login",
+        {
+          email: email,
+          password: password,
         }
+      );
+      //   console.log(response.data);
+      if (response.data.token) {
+        setUser(response.data.token);
+
+        history.push("/");
       } else {
-        alert("missing parameter");
+        alert("Une erreur est survenue");
       }
     } catch (error) {
       console.log(error.message);

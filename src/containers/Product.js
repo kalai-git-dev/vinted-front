@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import loading from "../assets/3.gif";
 
 const Product = () => {
   const { id } = useParams();
-
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
@@ -33,7 +32,7 @@ const Product = () => {
           {data.product_details.map((detail, index) => {
             const keys = Object.keys(detail);
             // console.log(keys);
-            console.log(data);
+            // console.log(data);
             return (
               <p className="details" key={index}>
                 <p className="span-left">{keys[0]}</p>
@@ -60,7 +59,9 @@ const Product = () => {
               <span>{data.owner.account.username}</span>
             )}
           </div>
-          <button className="button-product">Acheter</button>
+          <Link to="/payment" className="button-product">
+            Acheter
+          </Link>
         </div>
       </div>
     </div>

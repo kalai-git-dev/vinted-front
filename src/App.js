@@ -15,12 +15,14 @@ import Signup from "./containers/Signup";
 import Login from "./containers/Login";
 import FiltersProducts from "./containers/FiltersProducts";
 import Publish from "./containers/publish/Publish";
+import Payment from "./containers/payement/Payment";
 
 function App() {
   const [products, setProducts] = useState([]);
 
   const [token, setToken] = useState(Cookie.get("token") || null);
   const [search, setSearch] = useState("");
+  console.log(products);
 
   const setUser = (token2) => {
     if (token2) {
@@ -53,7 +55,7 @@ function App() {
             <Signup setUser={setUser} />
           </Route>
           <Route path="/login">
-            <Login />
+            <Login setUser={setUser} />
           </Route>
           <Route path="/filters">
             <FiltersProducts
@@ -64,7 +66,9 @@ function App() {
           <Route exact path="/publish">
             {!token ? <Redirect to="/login" /> : <Publish token={token} />}
           </Route>
-
+          <Route exact path="/payment">
+            {!token ? <Redirect to="/login" /> : <Payment />}
+          </Route>
           <Route path="/">
             <Home
               search={search}
