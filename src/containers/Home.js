@@ -3,6 +3,7 @@ import axios from "axios";
 import home from "../assets/home.jpeg";
 import loading from "../assets/3.gif";
 import Section from "../componants/Section";
+import { Link } from "react-router-dom";
 
 function Home({ products, setProducts }) {
   const [isLoading, setIsLoading] = useState(false);
@@ -27,11 +28,11 @@ function Home({ products, setProducts }) {
   // });
   return isLoading ? (
     <div>
-      <div>
+      <div className="home">
         <img className="home-img" src={home} alt="home" />
         <div className="card">
           <h2>Prets à faire du tri dans vos placards?</h2>
-          <button>commencer à vendre</button>
+          <Link to="/publish">commencer à vendre</Link>
         </div>
       </div>
       <div className="container">

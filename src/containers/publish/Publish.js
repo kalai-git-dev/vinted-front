@@ -62,9 +62,13 @@ function Publish({ token }) {
         }}
       >
         <div className="section-input input-heigth">
+          <label className="label-file" htmlFor="file">
+            Ajouter une photo
+          </label>
           <input
             className="input-file"
             type="file"
+            id="file"
             // value="Ajoute une photo"
             onChange={(event) => {
               setFile(event.target.files[0]);

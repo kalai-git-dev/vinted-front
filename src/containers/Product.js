@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useParams, Link } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import loading from "../assets/3.gif";
 
 const Product = () => {
@@ -8,6 +8,7 @@ const Product = () => {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
+  let history = useHistory();
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(
@@ -24,14 +25,14 @@ const Product = () => {
   ) : (
     <div className="container-product">
       <div className="col-3">
-        <img src={data.product_image.secure_url} alt={data.version_id} />;
+        <img src={data.product_image.secure_url} alt={data.version_id} />
       </div>
       <div className="col-4">
         <div className="bloc-1">
           <p className="price">{data.product_price}£</p>
           {data.product_details.map((detail, index) => {
             const keys = Object.keys(detail);
-            // console.log(keys);
+            // console.log(data.product_price);
             // console.log(data);
             return (
               <p className="details" key={index}>
@@ -59,9 +60,20 @@ const Product = () => {
               <span>{data.owner.account.username}</span>
             )}
           </div>
-          <Link to="/payment" className="button-product">
+          <button
+            className="button-product"
+            onClick={() => {
+              history.push({
+                pathname: "/payment",
+                state: {
+                  name: data.product_name,
+                  price: data.product_price,
+                },
+              });
+            }}
+          >
             Acheter
-          </Link>
+          </button>
         </div>
       </div>
     </div>

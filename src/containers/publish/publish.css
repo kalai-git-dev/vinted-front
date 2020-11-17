@@ -20,7 +20,18 @@ h1 {
 .input-heigth {
   height: 250px;
 }
+.label-file {
+  padding: 15px 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(7, 148, 148);
+  border: 2px solid rgb(7, 148, 148);
+  font-weight: 700;
+}
 .input-file {
+  display: none;
   outline: none;
   padding: 15px 30px;
   position: absolute;

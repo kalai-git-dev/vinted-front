@@ -89,10 +89,14 @@ body {
   background-color: rgb(38, 206, 218);
   color: #fff;
   font-weight: 500;
+  text-decoration: none;
 }
 .home-img {
   height: 560px;
   width: 100vw;
+}
+.home {
+  position: relative;
 }
 .card {
   width: 400px;
@@ -109,7 +113,8 @@ body {
   font-size: 30px;
   margin-bottom: 30px;
 }
-.card button {
+.card a {
+  margin-top: 30px;
   outline: none;
   padding: 15px;
   color: rgb(249, 252, 252);
@@ -117,6 +122,7 @@ body {
   font-size: 16px;
   border: none;
   border-radius: 5px;
+  text-decoration: none;
 }
 .search {
   position: relative;
@@ -436,6 +442,9 @@ form p {
 @media screen and (max-width: 630px) {
   .container-product {
     flex-direction: column;
+  }
+  .container-form {
+    width: 100%;
   }
   .col-3 img {
     flex: 1;

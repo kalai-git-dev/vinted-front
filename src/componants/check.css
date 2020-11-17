@@ -1,0 +1,57 @@
+.container-form {
+  width: 40%;
+  margin: 60px auto;
+  background-color: #fff;
+  padding: 20px;
+}
+.total-p {
+  color: black;
+  margin: 20px 0;
+  line-height: 22px;
+}
+
+.bloc-2 p {
+  color: black;
+}
+.flex p {
+  color: rgb(138, 136, 136);
+}
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+.flex h2 {
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+.bloc-1 {
+  /* border-bottom: black 1px solid; */
+  padding: 20px 0;
+}
+.card-payement {
+  border: rgb(231, 228, 228) solid 1px;
+  padding: 20px 30px;
+  margin: 30px 0;
+}
+.button-pay {
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  padding: 20px;
+  background-color: rgb(75, 230, 96);
+  outline: none;
+  border: rgb(221, 219, 219) solid 1px;
+  border-radius: 5px;
+}
+@media screen and (max-width: 630px) {
+  .container-form {
+    width: 100%;
+    margin: 40px;
+  }
+}
+@media screen and (max-width: 950px) {
+  .container-form {
+    width: 80%;
+    margin: 40px;
+  }
+}
