@@ -7,14 +7,19 @@ function Section({ product }) {
       <Link to={"/product/" + product._id} className="link">
         <div key={product._id} className="annonce">
           <div className="owner">
-            <img
-              className="img-avatar"
-              src={product.product_image.url}
-              // src={product.owner.account.avatar.url}
-              alt={product.owner.account.username}
-            />
-
-            <p className="p-owner">{product.owner.account.username}</p>
+            {product.owner.account.avatar ? (
+              <>
+                <img
+                  className="img-avatar"
+                  // src={product.product_image.url}
+                  src={product.owner.account.avatar.url}
+                  alt={product.owner.account.username}
+                />
+                <p className="p-owner">{product.owner.account.username}</p>{" "}
+              </>
+            ) : (
+              <p className="p-owner">{product.owner.account.username}</p>
+            )}
           </div>
 
           <img

@@ -304,6 +304,7 @@ p.p-owner {
   background-color: #78f2f8;
   border: none;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 1340px) {
