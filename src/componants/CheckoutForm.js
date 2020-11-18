@@ -17,7 +17,7 @@ const CheckoutForm = ({ name, price }) => {
     const cardElement = elements.getElement(CardElement);
 
     const stripeResponse = await stripe.createToken(cardElement);
-    //console.log(stripeResponse);
+    console.log(stripeResponse);
     // console.log(stripeToken);
     //console.log(name, price);
     const stripeToken = stripeResponse.token.id;
@@ -82,7 +82,7 @@ const CheckoutForm = ({ name, price }) => {
           </form>
         </div>
       ) : (
-        <Result />
+        <Result name={name} total={total} />
       )}
     </>
   );
